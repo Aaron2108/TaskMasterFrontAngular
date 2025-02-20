@@ -1,0 +1,320 @@
+.main_inicio {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    box-sizing: border-box;
+}
+.section_inicio{
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section_tareas_filtros{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.article1_tareas, .article2_tareas{
+    width: 80%;
+    height: auto;
+    border: solid 1px #bebebe;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    box-shadow: 0px 8px 20px -10px #bbbbbb;
+    text-shadow: 0px 0px 5px #fff;
+    letter-spacing: 1px;
+    background-image: radial-gradient(circle 160px at 50% 120%, #353535, #1f1f1f);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    gap: 10px;
+}
+.h2_nueva_tarea{
+    width: 100%;
+    text-align: center;
+}
+.label-custom {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.input-custom {
+    width: 80%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    margin-top: 5px;
+}
+
+
+.input-custom::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-custom:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+
+.input-custom:focus {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo para el select */
+.select-custom {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    color: black;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    appearance: none; 
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+
+.select-custom:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+
+.select-custom:focus {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.article2_tareas{
+    margin-top: 20px;
+}
+
+/* Estilo general para los labels */
+.label-custom {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Estilo para los select */
+.select-custom {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    appearance: none; 
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+/* Efecto al pasar el mouse */
+.select-custom:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+/* Efecto al hacer focus */
+.select-custom:focus {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos para los options */
+.select-custom option {
+    background-color: black; /* Fondo negro para contraste */
+    color: white;
+    padding: 10px;
+}
+
+/* Opcional: Cambiar el color al pasar el mouse por una opción */
+.select-custom option:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Contenedor principal de la tarjeta de tareas */
+.section_card_tareas {
+    width: 80%;
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.section_card_tareas:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+
+.article_tareas_title_description,
+.article_tareas_fecha_vencimiento {
+    flex: 1;
+    padding: 10px;
+    color: white;
+}
+
+
+.h2_tareas {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+
+.p_tareas {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+
+.h2_tareas_fecha_vencimiento {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 5px;
+}
+
+
+/* Contenedor de botones */
+.section_card_acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+/* Estilos generales para los botones */
+.btn_editar,
+.btn_eliminar {
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Botón Editar */
+.btn_editar {
+    background-color: rgba(0, 255, 150, 0.8);
+    color: black;
+}
+
+.btn_editar:hover {
+    background-color: rgba(0, 255, 150, 1);
+    transform: scale(1.05);
+}
+
+/* Botón Eliminar */
+.btn_eliminar {
+    background-color: rgba(255, 50, 50, 0.8);
+    color: white;
+}
+
+.btn_eliminar:hover {
+    background-color: rgba(255, 50, 50, 1);
+    transform: scale(1.05);
+}
+
+.btn_crear_tarea {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* Efecto hover */
+.btn_crear_tarea:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Efecto activo (cuando se presiona) */
+.btn_crear_tarea:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+}
+
+.form_tareas{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.btn_logout {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  
+  .btn_logout:hover {
+    background-color: #c9302c;
+  }
+  

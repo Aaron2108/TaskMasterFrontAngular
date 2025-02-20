@@ -1,0 +1,41 @@
+<!-- Modal de Edición de Tareas -->
+<section id="editTaskModal" class="modal-dark">
+    <article class="modal-content-dark">
+        <header class="modal-header-dark">
+            <h2 class="modal-title-dark">Editar Tarea</h2>
+            <button class="modal-close-dark" aria-label="Cerrar" (click)="closeModal()">X</button>
+        </header>
+        
+        <form class="form-dark" (ngSubmit)="guardarCambios()">
+            <label class="label-dark" for="edit-title">
+                Título
+                <input class="input-dark" type="text" id="edit-title" name="title" [(ngModel)]="tareaSeleccionada.title" required>
+            </label>
+
+            <label class="label-dark" for="edit-description">
+                Descripción
+                <input class="input-dark" type="text" id="edit-description" name="description" [(ngModel)]="tareaSeleccionada.description" required>
+            </label>
+
+            <label class="label-dark" for="edit-date">
+                Fecha de Vencimiento
+                <input class="input-dark" type="date" id="edit-date" name="fecha_vencimiento"
+                       [ngModel]="tareaSeleccionada.fecha_vencimiento | date:'yyyy-MM-dd'"
+                       (ngModelChange)="tareaSeleccionada.fecha_vencimiento = $event" required>
+            </label>
+
+            <label class="label-dark" for="edit-status">
+                Estado
+                <select class="select-dark" id="edit-status" name="estado" [(ngModel)]="tareaSeleccionada.estado">
+                  <option [value]="1">Pendiente</option>
+                  <option [value]="0">Completada</option>
+                </select>
+            </label>
+
+            <section class="modal-actions-dark">
+                <button type="submit" class="btn-save-dark">Guardar cambios</button>
+                <button type="button" class="modal-close-dark" aria-label="Cerrar" (click)="closeModal()">Cancelar</button>
+            </section>
+        </form>
+    </article>
+</section>

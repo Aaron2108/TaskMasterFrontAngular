@@ -1,0 +1,90 @@
+<main class="main_inicio">
+    <section class="section_inicio">
+        <h1 class="h1_inicio">Task Master</h1>
+        <button class="btn_logout" (click)="logout()">Logout</button>
+        <section class="section_tareas_filtros">
+            <article class="article1_tareas">
+                <h2 class="h2_nueva_tarea">Nueva Tarea</h2>
+
+                <form (submit)="agregarTarea()" class="form_tareas">
+                    <label class="label-custom" for="title">
+                        Title
+                        <input class="input-custom" type="text" id="title" name="title" [(ngModel)]="nuevaTarea.title" required>
+                    </label>
+
+                    <label class="label-custom" for="description">
+                        Description
+                        <input class="input-custom" type="text" id="description" name="description" [(ngModel)]="nuevaTarea.description" required>
+                    </label>
+
+                    <label class="label-custom" for="fecha_vencimiento">
+                        Fecha de Vencimiento
+                        <input class="input-custom" type="date" id="fecha_vencimiento" name="fecha_vencimiento"
+                               [ngModel]="nuevaTarea.fecha_vencimiento | date:'yyyy-MM-dd'"
+                               (ngModelChange)="nuevaTarea.fecha_vencimiento = $event" required>
+                    </label>
+
+                    <label class="label-custom" for="estado">
+                        Estado
+                        <select class="select-custom" id="estado" name="estado" [(ngModel)]="nuevaTarea.estado">
+                            <option [value]="1">Pendiente</option>
+                            <option [value]="0">Completada</option>
+                        </select>
+                    </label>
+
+                    <button class="btn_crear_tarea" type="submit">Crear Tarea</button>
+                </form>
+            </article>
+
+            <article class="article2_tareas">
+                <h2>Filtros</h2>
+                <label class="label-custom" for="estado">
+                    Filtro por Estado
+                    <select class="select-custom" id="estado" name="estado" [(ngModel)]="filtroEstado" (change)="filtrarTareas()">
+                        <option value="todos">Todos</option>
+                        <option [value]="true">Pendiente</option>
+                        <option [value]="false">Completado</option>
+                    </select>
+                </label>
+
+                <label class="label-custom" for="orden_fecha">
+                    Ordenar por fecha
+                    <select class="select-custom" id="orden_fecha" name="orden_fecha" [(ngModel)]="ordenFecha" (change)="ordenarTareas()">
+                        <option value="asc">Más reciente</option>
+                        <option value="desc">Más antiguo</option>
+                    </select>
+                </label>
+            </article>
+        </section>
+
+        <section *ngFor="let tarea of listaFiltrada" class="section_card_tareas">
+            <article class="article_tareas_title_description">
+                <h2 class="h2_tareas">{{ tarea.title }}</h2>
+                <p class="p_tareas">{{ tarea.description }}</p>
+            </article>
+
+            <article class="section_card_tareas2">
+                <h2 class="h2_tareas_fecha_vencimiento">{{ tarea.fecha_vencimiento | date:'dd/MM/yyyy' }}</h2>
+                <p class="p_tareas">
+                    {{ tarea.estado === true ? 'Pendiente' : 'Completada' }}
+                </p>
+            </article>
+
+            <article class="section_card_acciones">
+                <button class="btn_editar" (click)="openModal(tarea)">Editar</button>
+                <button class="btn_eliminar" (click)="tarea.id ? eliminarTarea(tarea.id) : null">Eliminar</button>
+
+            </article>            
+        </section>
+
+        <section *ngIf="listaFiltrada.length === 0" class="section_card_tareas">
+            <p>No hay tareas disponibles</p>
+        </section>
+    </section>
+
+    <div *ngIf="modalSwitch">
+        <app-task-edit *ngIf="modalSwitch && tareaSeleccionada" [tareaSeleccionada]="tareaSeleccionada"></app-task-edit>
+
+
+    </div>
+</main>

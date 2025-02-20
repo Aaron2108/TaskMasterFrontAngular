@@ -1,0 +1,140 @@
+/* Fondo del modal */
+.modal-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Contenedor del modal */
+.modal-content-dark {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    width: 40%;
+    max-width: 500px; /* Evita que sea demasiado grande en pantallas grandes */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header del modal */
+.modal-header-dark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 1rem;
+}
+
+.modal-title-dark {
+    font-size: 1.5rem;
+    color: #f1f1f1;
+}
+
+/* Botón de cerrar */
+.modal-close-dark {
+    color: #0a0a0a;
+    font-size: 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close-dark:hover {
+    color: #ff4c4c;
+}
+
+/* Formularios */
+.form-dark {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Etiquetas */
+.label-dark {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Inputs */
+.input-dark,
+.select-dark {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-dark:focus,
+.select-dark:focus {
+    outline: none;
+    border-color: #00c9a7;
+}
+
+/* Acciones */
+.modal-actions-dark {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+/* Botones */
+.btn-save-dark,
+.btn-cancel-dark {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-save-dark {
+    background: #00c9a7;
+    color: #1e1e1e;
+    border: none;
+}
+
+.btn-save-dark:hover {
+    background: #00a88a;
+}
+
+.btn-cancel-dark {
+    background: transparent;
+    color: #f1f1f1;
+    border: 1px solid #444;
+    text-decoration: none;
+}
+
+.btn-cancel-dark:hover {
+    background: #ff4c4c;
+    border-color: #ff4c4c;
+}
