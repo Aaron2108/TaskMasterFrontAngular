@@ -42,8 +42,8 @@
                     Filtro por Estado
                     <select class="select-custom" id="estado" name="estado" [(ngModel)]="filtroEstado" (change)="filtrarTareas()">
                         <option value="todos">Todos</option>
-                        <option [value]="true">Pendiente</option>
-                        <option [value]="false">Completado</option>
+                        <option [value]="1">Pendiente</option>
+                        <option [value]="0">Completado</option>
                     </select>
                 </label>
 
