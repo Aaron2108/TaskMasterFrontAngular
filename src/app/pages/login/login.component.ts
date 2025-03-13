@@ -20,7 +20,7 @@ export class LoginComponent {
   public formBuild = inject(FormBuilder);
 
   public formLogin: FormGroup = this.formBuild.group({
-    email: ['', [Validators.required, Validators.email]], 
+    email: ['', [Validators.required, Validators.email]], //Valida datos requeridos
     password: ['', [Validators.required, Validators.minLength(8)]] 
   });
 
@@ -52,7 +52,7 @@ export class LoginComponent {
       },
       error:(error) =>{
         console.log(error.message);
-        alert("Error al iniciar sesión. Intente de nuevo.");
+        alert("Error al iniciar sesión. Intente de nuevo.")
       }
     })
   }
